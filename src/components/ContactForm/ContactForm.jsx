@@ -1,5 +1,7 @@
 import { Component } from 'react';
+import InputMask from 'react-input-mask';
 import shortid from 'shortid';
+import './ContactForm.scss';
 
 class ContactForm extends Component {
   state = {
@@ -29,27 +31,33 @@ class ContactForm extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form action="" onSubmit={this.handleFormSubmit}>
-        <label htmlFor="">
+      <form action="" onSubmit={this.handleFormSubmit} className="contact-form">
+        <label htmlFor="" className="form-label">
           {' '}
           Name
           <input
             type="text"
             value={name}
             name="name"
+            maxLength="13"
+            className="form-input-name"
             onChange={this.handleNameNumberChange}
           />
         </label>
-        <label htmlFor="">
+        <label htmlFor="" className="form-label">
           Number
-          <input
+          <InputMask
             type="tel"
             value={number}
             name="number"
+            mask="+3\80 99 999 99 99"
+            className="form-input-number"
             onChange={this.handleNameNumberChange}
           />
         </label>
-        <button type="submit">Add</button>
+        <button type="submit" className="add-button">
+          Add
+        </button>
       </form>
     );
   }

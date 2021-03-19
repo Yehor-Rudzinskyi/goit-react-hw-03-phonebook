@@ -1,0 +1,32 @@
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: baseline;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.contact-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.contact-list-deleteButton {
+  border: none;
+  padding: 5px;
+  background-color: teal;
+  color: #fff;
+
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  &:hover {
+    background-color: rgb(6, 99, 99);
+  }
+}
